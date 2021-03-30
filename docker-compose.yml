@@ -1,0 +1,29 @@
+version: "3.4"
+
+volumes: 
+  shared:
+
+services:
+
+  data:
+    build: data
+    image: data:shared
+    container_name: data
+    volumes:
+      - ./data/source:/usr/local/src/source
+      - shared:/usr/local/src/shared
+
+  client:
+    build: client
+    image: client
+    container_name: client  
+    working_dir: /usr/local/src
+    depends_on: 
+      - data
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
+      - shared:/usr/local/src/shared
+    command: /usr/local/src/lib/dind.sh
+
+
+  
