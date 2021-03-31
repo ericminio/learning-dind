@@ -1,3 +1,5 @@
+[![Build Status](https://www.travis-ci.com/ericminio/learning-dind.svg?branch=master)](https://www.travis-ci.com/ericminio/learning-dind)
+
 ```
 > docker-compose up 
 Starting data ... done
