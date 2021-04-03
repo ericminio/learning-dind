@@ -1,3 +1,5 @@
+[![Build status](https://github.com/ericminio/learning-dind/actions/workflows/main.yml/badge.svg)](https://github.com/ericminio/learning-dind/actions)
+
 [![Build Status](https://www.travis-ci.com/ericminio/learning-dind.svg?branch=master)](https://www.travis-ci.com/ericminio/learning-dind)
 
 ```
