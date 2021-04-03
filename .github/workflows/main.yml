@@ -1,0 +1,23 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Display docker version
+      run: docker version
+    - name: Display docker-compose version
+      run: docker-compose version
+    - name: Build images
+      run: docker-compose build
+    - name: Run tests
+      run: |
+        chmod +x tests.sh
+        ./tests.sh
+
+      
