@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker-compose up > output
+docker-compose up --build > output
 cat output
 
 success=`grep "I see you" output | wc -l | xargs`
