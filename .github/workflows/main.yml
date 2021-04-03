@@ -7,8 +7,6 @@ jobs:
     name: about docker environment
     runs-on: ubuntu-latest
     steps:
-    - name: pwd
-      run: pwd
     - name: Display docker version
       run: |
         docker version
@@ -21,7 +19,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: pwd
-      run: pwd
+      run: |
+        pwd
+        ls -la
     - name: Build images
       run: docker-compose build
     - name: Run tests
