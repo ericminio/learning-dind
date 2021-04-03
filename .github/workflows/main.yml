@@ -3,22 +3,29 @@ name: Tests
 on: [push]
 
 jobs:
-  build:
-
+  info:
+    name: about docker environment
     runs-on: ubuntu-latest
+    steps:
+    - name: pwd
+      run: pwd
+    - name: Display docker version
+      run: |
+        docker version
+        docker-compose version
 
+  test:
+    name: run the test
+    needs: info
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Display docker version
-      run: docker version
-    - name: Display docker-compose version
-      run: docker-compose version
+    - name: pwd
+      run: pwd
     - name: Build images
       run: docker-compose build
     - name: Run tests
       run: |
-        pwd
         chmod +x test.sh
         ./test.sh
-
       
